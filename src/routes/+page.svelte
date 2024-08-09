@@ -1,9 +1,11 @@
 <script lang="ts">
-	let fontSize = 1;
 	let isNavPanelShow = true;
 	let bgColor = 'bg-white';
 	let textColor = 'text-dark';
 	let fontFamily = 'Segoe UI';
+	let fontSize = 1;
+	let lineHeight = 1.25;
+	let articleInterval = 0.75;
 </script>
 
 <div class="dropdown" hidden>
@@ -32,7 +34,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="{bgColor} {textColor} pb-1"
-	style="font-size: {fontSize}em; padding: 0 1em; font-family: {fontFamily}"
+	style="font-size: {fontSize}em; padding: 0 1em; font-family: {fontFamily}; line-height:{lineHeight}em; --article-interval:{articleInterval}em"
 	on:click={() => (isNavPanelShow = !isNavPanelShow)}
 >
 	<div>
@@ -235,7 +237,7 @@
 </div>
 
 <div class="sticky-bottom w-100 fourth-color text-light p-2 {isNavPanelShow ? '' : 'collapse'}">
-	<div class="d-flex align-items-center gap-2">
+	<div class="d-flex align-items-center gap-2 flex-wrap">
 		<div class="btn-group">
 			<button class="btn {bgColor} {textColor}">
 				<div class="d-flex flex-column align-items-center justify-content-center">
@@ -402,11 +404,44 @@
 					<div>Размер</div>
 				</div>
 			</button>
-			<button
-				class="btn btn-dark text-light rounded-start"
-				on:click|stopPropagation={() => (fontSize += 0.05)}>+</button
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
+				>+</button
 			>
-			<button class="btn btn-dark text-light" on:click|stopPropagation={() => (fontSize -= 0.05)}
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize -= 0.05)}
+				>-</button
+			>
+		</div>
+		<div class="btn-group">
+			<button class="btn {bgColor} {textColor}">
+				<div class="d-flex flex-column align-items-center justify-content-center">
+					<div class="d-flex align-items-center gap-1 pt-1">
+						<i class="fa-solid fa-arrow-down-up-across-line" />
+						<div>{Math.round(lineHeight * 100) / 100}</div>
+					</div>
+					<div>Интервал строк</div>
+				</div>
+			</button>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight += 0.05)}
+				>+</button
+			>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight -= 0.05)}
+				>-</button
+			>
+		</div>
+		<div class="btn-group">
+			<button class="btn {bgColor} {textColor}">
+				<div class="d-flex flex-column align-items-center justify-content-center">
+					<div class="d-flex align-items-center gap-1 pt-1">
+						<i class="fa-solid fa-arrow-down-up-across-line" />
+						<div>{Math.round(articleInterval * 100) / 100}</div>
+					</div>
+					<div>Интервал абзацев</div>
+				</div>
+			</button>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (articleInterval += 0.05)}
+				>+</button
+			>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (articleInterval -= 0.05)}
 				>-</button
 			>
 		</div>
@@ -414,6 +449,13 @@
 </div>
 
 <style>
+	:global(p) {
+		margin-bottom: var(--article-interval);
+	}
+	:root {
+		--article-interval: 1;
+	}
+
 	.first-color {
 		background: #f0ece2;
 	}
