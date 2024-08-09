@@ -349,7 +349,7 @@
 						<i class="fa-solid fa-font" />
 						<div style="font-family: {fontFamily};">{fontFamily}</div>
 					</div>
-					<div>Название шрифта</div>
+					<div>Название</div>
 				</div>
 			</button>
 			<ul class="dropdown-menu">
@@ -391,6 +391,24 @@
 			<button class="btn btn-secondary" data-bs-toggle="dropdown">
 				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
 			</button>
+		</div>
+		<div class="btn-group">
+			<button class="btn {bgColor} {textColor}">
+				<div class="d-flex flex-column align-items-center justify-content-center">
+					<div class="d-flex align-items-center gap-1 pt-1">
+						<i class="fa-solid fa-text-height" />
+						<div>{Math.round(fontSize * 100) / 100}</div>
+					</div>
+					<div>Размер</div>
+				</div>
+			</button>
+			<button
+				class="btn btn-dark text-light rounded-start"
+				on:click|stopPropagation={() => (fontSize += 0.05)}>+</button
+			>
+			<button class="btn btn-dark text-light" on:click|stopPropagation={() => (fontSize -= 0.05)}
+				>-</button
+			>
 		</div>
 	</div>
 </div>
