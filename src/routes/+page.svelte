@@ -224,10 +224,13 @@
 	<div class="d-flex align-items-center text-nowrap gap-2 mb-2">
 		<div class="btn-group w-50">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column text-start">
+				<div class="d-flex align-items-center gap-1 text-start">
 					<i class="fa-solid fa-paint-roller pt-1" />
+					<div class="badge {bgColor} {textColor} text-start">
+						{colors.find((c) => c.name == bgColor.replace('bg-', ''))?.description}
+					</div>
 				</div>
-				<div class="text-start">Цвет фона</div>
+				<div class=" text-start">Цвет фона</div>
 			</button>
 			<ul class="dropdown-menu">
 				{#each colors as color}
@@ -256,8 +259,11 @@
 		</div>
 		<div class="btn-group w-50">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column text-start">
+				<div class="d-flex align-items-center gap-1 text-start">
 					<i class="fa-solid fa-paintbrush pt-1" />
+					<div class="badge {textColor} text-start">
+						{colors.find((c) => c.name == textColor.replace('text-', ''))?.description}
+					</div>
 				</div>
 				<div class="text-start">Цвет шрифта</div>
 			</button>
