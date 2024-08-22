@@ -221,7 +221,7 @@
 </div>
 
 <div class="sticky-bottom w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
-	<div class="d-flex align-items-center flex-nowrap gap-2 mb-2">
+	<div class="d-flex align-items-center text-nowrap gap-2 mb-2">
 		<div class="btn-group w-50">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column text-start">
@@ -231,16 +231,23 @@
 			</button>
 			<ul class="dropdown-menu">
 				{#each colors as color}
-					{#if color.name != textColor.replace('text-', '')}
-						<li>
-							<button class="dropdown-item" on:click={() => (bgColor = 'bg-' + color.name)}>
-								<div class="d-flex align-items-center gap-2">
-									<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
-									<div>{color.description}</div>
-								</div>
-							</button>
-						</li>
-					{/if}
+					<li>
+						<button
+							class="dropdown-item"
+							on:click={() => {
+								bgColor = 'bg-' + color.name;
+								if (textColor.replace('text-', '') == bgColor.replace('bg-', '')) {
+									if (bgColor == 'bg-dark') textColor = 'text-white';
+									else textColor = 'text-dark';
+								}
+							}}
+						>
+							<div class="d-flex align-items-center gap-2">
+								<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
+								<div>{color.description}</div>
+							</div>
+						</button>
+					</li>
 				{/each}
 			</ul>
 			<button class="btn btn-secondary" data-bs-toggle="dropdown">
