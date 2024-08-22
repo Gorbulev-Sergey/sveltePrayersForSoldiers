@@ -15,6 +15,10 @@
 	];
 </script>
 
+<div class="sticky-top w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
+	<h4 class="mb-0">Молитвы о воинах</h4>
+</div>
+
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="{bgColor} {textColor} pb-1"
@@ -221,7 +225,6 @@
 </div>
 
 <div class="sticky-bottom w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
-	<div class="d-flex align-items-center text-nowrap gap-2 mb-2" />
 	<div class="d-flex flex-column gap-2 align-items-stretch">
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
@@ -286,7 +289,6 @@
 				<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
 			</button>
 		</div>
-
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column justify-content-center">
