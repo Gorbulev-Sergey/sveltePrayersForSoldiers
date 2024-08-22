@@ -233,9 +233,6 @@
 		? 'bg-dark'
 		: 'bg-4'} text-light p-3 {isNavPanelShow ? '' : 'collapse'}"
 >
-	<div class="badge bg-primary bg-opacity-10 mb-2 text-wrap text-start text-opacity-50">
-		Чтобы скрыть настройки нажмите на экран с текстом молитв.
-	</div>
 	<div class="d-flex flex-column gap-2 align-items-stretch">
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
@@ -403,6 +400,9 @@
 				><i class="fa-solid fa-minus m-2" /></button
 			>
 		</div>
+	</div>
+	<div class="badge bg-primary bg-opacity-10 mt-2 text-wrap">
+		Чтобы скрыть настройки нажмите на экран с текстом молитв.
 	</div>
 </div>
 
