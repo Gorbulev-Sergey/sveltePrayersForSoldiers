@@ -3,7 +3,7 @@
 	let bgColor = 'bg-white';
 	let textColor = 'text-dark';
 	let fontFamily = 'Segoe UI';
-	let fontSize = 1.15;
+	let fontSize = 1.2;
 	let lineHeight = 1.25;
 	let articleInterval = 0.75;
 	let colors = [
@@ -18,7 +18,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="{bgColor} {textColor} pb-1"
-	style="font-size: {fontSize}em; padding: 0 .5em; font-family: {fontFamily}; line-height:{lineHeight}em; --article-interval:{articleInterval}em"
+	style="font-size: {fontSize}em; padding: 0 .75em; font-family: {fontFamily}; line-height:{lineHeight}em; --article-interval:{articleInterval}em"
 	on:click={() => (isNavPanelShow = !isNavPanelShow)}
 >
 	<div>
