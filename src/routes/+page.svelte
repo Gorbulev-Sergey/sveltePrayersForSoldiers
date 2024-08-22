@@ -15,33 +15,10 @@
 	];
 </script>
 
-<div class="dropdown" hidden>
-	<button
-		class="btn btn-sm btn-light text-dark bg-white bg-opacity-25 position-fixed"
-		data-bs-toggle="dropdown"
-		style="top:.25em; right: .25em;">···</button
-	>
-	<div class="dropdown-menu">
-		<div class="btn-group btn-group mx-2">
-			<button class="btn bg-white text-dark border-0">Размер шрифта</button>
-			<button
-				class="btn btn-dark text-light rounded-start"
-				on:click|stopPropagation={() => (fontSize += 0.05)}>+</button
-			>
-			<button class="btn btn-light text-dark" on:click|stopPropagation={() => (fontSize = 1)}
-				>сбросить</button
-			>
-			<button class="btn btn-dark text-light" on:click|stopPropagation={() => (fontSize -= 0.05)}
-				>-</button
-			>
-		</div>
-	</div>
-</div>
-
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="{bgColor} {textColor} pb-1"
-	style="font-size: {fontSize}em; padding: 0 1em; font-family: {fontFamily}; line-height:{lineHeight}em; --article-interval:{articleInterval}em"
+	style="font-size: {fontSize}em; padding: 0 .5em; font-family: {fontFamily}; line-height:{lineHeight}em; --article-interval:{articleInterval}em"
 	on:click={() => (isNavPanelShow = !isNavPanelShow)}
 >
 	<div>
