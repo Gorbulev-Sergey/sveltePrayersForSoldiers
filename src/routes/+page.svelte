@@ -221,8 +221,9 @@
 </div>
 
 <div class="sticky-bottom w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
-	<div class="d-flex align-items-center text-nowrap gap-2 mb-2">
-		<div class="btn-group w-50">
+	<div class="d-flex align-items-center text-nowrap gap-2 mb-2" />
+	<div class="d-flex flex-column gap-2 align-items-stretch">
+		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex align-items-center gap-1 text-start">
 					<i class="fa-solid fa-paint-roller pt-1" />
@@ -257,7 +258,7 @@
 				<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
 			</button>
 		</div>
-		<div class="btn-group w-50">
+		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex align-items-center gap-1 text-start">
 					<i class="fa-solid fa-paintbrush pt-1" />
@@ -285,8 +286,7 @@
 				<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
 			</button>
 		</div>
-	</div>
-	<div class="d-flex flex-column gap-2 align-items-stretch">
+
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column justify-content-center">
