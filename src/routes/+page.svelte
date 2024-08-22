@@ -16,9 +16,9 @@
 </script>
 
 <div
-	class="sticky-top w-100 {bgColor != 'bg-dark' ? 'bg-dark' : 'bg-4'} text-light p-3 {isNavPanelShow
-		? ''
-		: 'collapse'}"
+	class="sticky-top w-100 shadow shadow-sm {bgColor != 'bg-dark'
+		? 'bg-dark'
+		: 'bg-4'} text-light p-3 {isNavPanelShow ? '' : 'collapse'}"
 >
 	<b class="mb-0">Молитвы о воинах</b>
 </div>
