@@ -18,7 +18,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="{bgColor} {textColor} pb-1"
-	style="font-size: {fontSize}em; padding: 0 .75em; font-family: {fontFamily}; line-height:{lineHeight}em; --article-interval:{articleInterval}em"
+	style="font-size: {fontSize}em; padding: 0 .7em; font-family: {fontFamily}; line-height:{lineHeight}em; --article-interval:{articleInterval}em"
 	on:click={() => (isNavPanelShow = !isNavPanelShow)}
 >
 	<div>
@@ -220,7 +220,7 @@
 	</div>
 </div>
 
-<div class="sticky-bottom w-100 bg-4 text-light p-2 {isNavPanelShow ? '' : 'collapse'}">
+<div class="sticky-bottom w-100 bg-dark text-light p-2 {isNavPanelShow ? '' : 'collapse'}">
 	<div class="d-flex align-items-center gap-2 flex-wrap align-items-stretch">
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark">
