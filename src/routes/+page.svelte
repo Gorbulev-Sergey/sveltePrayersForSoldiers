@@ -244,7 +244,7 @@
 				{/each}
 			</ul>
 			<button class="btn btn-secondary" data-bs-toggle="dropdown">
-				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
+				<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
 			</button>
 		</div>
 		<div class="btn-group w-50">
@@ -269,11 +269,28 @@
 				{/each}
 			</ul>
 			<button class="btn btn-secondary" data-bs-toggle="dropdown">
-				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
+				<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
 			</button>
 		</div>
 	</div>
 	<div class="d-flex flex-column gap-2 align-items-stretch">
+		<div class="btn-group">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
+				<div class="d-flex flex-column align-items-center justify-content-center">
+					<div class="d-flex align-items-center gap-1 pt-1">
+						<i class="fa-solid fa-text-height" />
+						<div class="badge bg-dark text-light">{Math.round(fontSize * 100) / 100}</div>
+					</div>
+					<div>Размер шрифта</div>
+				</div>
+			</button>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
+				><i class="fa-solid fa-plus m-2" /></button
+			>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize -= 0.05)}
+				><i class="fa-solid fa-minus m-2" /></button
+			>
+		</div>
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
@@ -330,23 +347,6 @@
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
-						<i class="fa-solid fa-text-height" />
-						<div class="badge bg-dark text-light">{Math.round(fontSize * 100) / 100}</div>
-					</div>
-					<div>Размер шрифта</div>
-				</div>
-			</button>
-			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
-				><i class="fa-solid fa-plus m-2" /></button
-			>
-			<button class="btn btn-secondary m-2" on:click|stopPropagation={() => (fontSize -= 0.05)}
-				><i class="fa-solid fa-minus" /></button
-			>
-		</div>
-		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column align-items-center justify-content-center">
-					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-arrow-down-up-across-line" />
 						<div class="badge bg-dark text-light">{Math.round(lineHeight * 100) / 100}</div>
 					</div>
@@ -354,10 +354,10 @@
 				</div>
 			</button>
 			<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight += 0.05)}
-				><i class="fa-solid fa-plus" /></button
+				><i class="fa-solid fa-plus m-2" /></button
 			>
 			<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight -= 0.05)}
-				><i class="fa-solid fa-minus" /></button
+				><i class="fa-solid fa-minus m-2" /></button
 			>
 		</div>
 		<div class="btn-group">
@@ -371,10 +371,10 @@
 				</div>
 			</button>
 			<button class="btn btn-secondary" on:click|stopPropagation={() => (articleInterval += 0.05)}
-				><i class="fa-solid fa-plus" /></button
+				><i class="fa-solid fa-plus m-2" /></button
 			>
 			<button class="btn btn-secondary" on:click|stopPropagation={() => (articleInterval -= 0.05)}
-				><i class="fa-solid fa-minus" /></button
+				><i class="fa-solid fa-minus m-2" /></button
 			>
 		</div>
 	</div>
