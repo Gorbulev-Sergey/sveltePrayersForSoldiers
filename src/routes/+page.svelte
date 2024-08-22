@@ -20,7 +20,7 @@
 		? ''
 		: 'collapse'}"
 >
-	<h6 class="mb-0">Молитвы о воинах</h6>
+	<b class="mb-0">Молитвы о воинах</b>
 </div>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
