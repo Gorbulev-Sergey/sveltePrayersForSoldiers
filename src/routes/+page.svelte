@@ -224,10 +224,10 @@
 	<div class="d-flex align-items-center gap-2 mb-2">
 		<div class="btn-group w-50">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column align-items-center justify-content-center">
+				<div class="d-flex flex-column justify-content-center">
 					<i class="fa-solid fa-paint-roller pt-1" />
-					<div>Цвет фона</div>
 				</div>
+				<div class="text-start">Цвет фона</div>
 			</button>
 			<ul class="dropdown-menu">
 				{#each colors as color}
@@ -249,10 +249,10 @@
 		</div>
 		<div class="btn-group w-50">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column align-items-center justify-content-center">
+				<div class="d-flex flex-column justify-content-center">
 					<i class="fa-solid fa-paintbrush pt-1" />
-					<div>Цвет шрифта</div>
 				</div>
+				<div class="text-start">Цвет шрифта</div>
 			</button>
 			<ul class="dropdown-menu">
 				{#each colors as color}
@@ -276,31 +276,14 @@
 	<div class="d-flex flex-column gap-2 align-items-stretch">
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column align-items-center justify-content-center">
-					<div class="d-flex align-items-center gap-1 pt-1">
-						<i class="fa-solid fa-text-height" />
-						<div class="badge bg-dark text-light">{Math.round(fontSize * 100) / 100}</div>
-					</div>
-					<div>Размер шрифта</div>
-				</div>
-			</button>
-			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
-				><i class="fa-solid fa-plus m-2" /></button
-			>
-			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize -= 0.05)}
-				><i class="fa-solid fa-minus m-2" /></button
-			>
-		</div>
-		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column align-items-center justify-content-center">
+				<div class="d-flex flex-column justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-font" />
 						<div class="badge bg-dark text-light" style="font-family: {fontFamily};">
 							{fontFamily}
 						</div>
 					</div>
-					<div>Название шрифта</div>
+					<div class="text-start">Название шрифта</div>
 				</div>
 			</button>
 			<ul class="dropdown-menu">
@@ -345,12 +328,29 @@
 		</div>
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column align-items-center justify-content-center">
+				<div class="d-flex flex-column justify-content-center">
+					<div class="d-flex align-items-center gap-1 pt-1">
+						<i class="fa-solid fa-text-height" />
+						<div class="badge bg-dark text-light">{Math.round(fontSize * 100) / 100}</div>
+					</div>
+					<div class="text-start">Размер шрифта</div>
+				</div>
+			</button>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
+				><i class="fa-solid fa-plus m-2" /></button
+			>
+			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize -= 0.05)}
+				><i class="fa-solid fa-minus m-2" /></button
+			>
+		</div>
+		<div class="btn-group">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
+				<div class="d-flex flex-column justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-arrow-down-up-across-line" />
 						<div class="badge bg-dark text-light">{Math.round(lineHeight * 100) / 100}</div>
 					</div>
-					<div>Интервал строк</div>
+					<div class="text-start">Интервал строк</div>
 				</div>
 			</button>
 			<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight += 0.05)}
@@ -362,12 +362,12 @@
 		</div>
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column align-items-center justify-content-center">
+				<div class="d-flex flex-column justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-arrows-up-to-line" />
 						<div class="badge bg-dark text-light">{Math.round(articleInterval * 100) / 100}</div>
 					</div>
-					<div>Интервал абзацев</div>
+					<div class="text-start">Интервал абзацев</div>
 				</div>
 			</button>
 			<button class="btn btn-secondary" on:click|stopPropagation={() => (articleInterval += 0.05)}
