@@ -323,7 +323,7 @@
 				</li>
 			</ul>
 			<button class="btn btn-secondary" data-bs-toggle="dropdown">
-				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
+				<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
 			</button>
 		</div>
 		<div class="btn-group">
@@ -337,9 +337,9 @@
 				</div>
 			</button>
 			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
-				><i class="fa-solid fa-plus" /></button
+				><i class="fa-solid fa-plus m-2" /></button
 			>
-			<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize -= 0.05)}
+			<button class="btn btn-secondary m-2" on:click|stopPropagation={() => (fontSize -= 0.05)}
 				><i class="fa-solid fa-minus" /></button
 			>
 		</div>
