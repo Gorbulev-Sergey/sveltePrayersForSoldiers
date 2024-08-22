@@ -16,7 +16,7 @@
 </script>
 
 <div class="sticky-top w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
-	<h4 class="mb-0">Молитвы о воинах</h4>
+	<h6 class="mb-0">Молитвы о воинах</h6>
 </div>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
