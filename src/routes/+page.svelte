@@ -220,10 +220,10 @@
 	</div>
 </div>
 
-<div class="sticky-bottom w-100 bg-dark text-light p-2 {isNavPanelShow ? '' : 'collapse'}">
-	<div class="d-flex align-items-center gap-2 flex-wrap align-items-stretch">
-		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark">
+<div class="sticky-bottom w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
+	<div class="d-flex align-items-center gap-2 mb-2">
+		<div class="btn-group w-50">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<i class="fa-solid fa-paint-roller pt-1" />
 					<div>Цвет фона</div>
@@ -247,8 +247,8 @@
 				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
 			</button>
 		</div>
-		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark">
+		<div class="btn-group w-50">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<i class="fa-solid fa-paintbrush pt-1" />
 					<div>Цвет шрифта</div>
@@ -272,8 +272,10 @@
 				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
 			</button>
 		</div>
+	</div>
+	<div class="d-flex flex-column gap-2 align-items-stretch">
 		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-font" />
@@ -325,7 +327,7 @@
 			</button>
 		</div>
 		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-text-height" />
@@ -342,7 +344,7 @@
 			>
 		</div>
 		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-arrow-down-up-across-line" />
@@ -359,7 +361,7 @@
 			>
 		</div>
 		<div class="btn-group">
-			<button class="btn bg-light bg-opacity-75 text-dark">
+			<button class="btn bg-light bg-opacity-75 text-dark w-100">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-arrows-up-to-line" />
