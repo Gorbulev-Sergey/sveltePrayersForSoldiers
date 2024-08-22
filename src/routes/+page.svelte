@@ -3,9 +3,16 @@
 	let bgColor = 'bg-white';
 	let textColor = 'text-dark';
 	let fontFamily = 'Segoe UI';
-	let fontSize = 1;
+	let fontSize = 1.15;
 	let lineHeight = 1.25;
 	let articleInterval = 0.75;
+	let colors = [
+		{ name: 'white', description: 'Белый' },
+		{ name: '2', description: 'Светло-бежевый' },
+		{ name: '3', description: 'Бежевый' },
+		{ name: '4', description: 'Серый' },
+		{ name: 'dark', description: 'Тёмный' }
+	];
 </script>
 
 <div class="dropdown" hidden>
@@ -236,116 +243,60 @@
 	</div>
 </div>
 
-<div class="sticky-bottom w-100 fourth-color text-light p-2 {isNavPanelShow ? '' : 'collapse'}">
-	<div class="d-flex align-items-center gap-2 flex-wrap">
-		<div class="btn-group h-100">
-			<button class="btn {bgColor} {textColor}">
+<div class="sticky-bottom w-100 bg-4 text-light p-2 {isNavPanelShow ? '' : 'collapse'}">
+	<div class="d-flex align-items-center gap-2 flex-wrap align-items-stretch">
+		<div class="btn-group">
+			<button class="btn bg-light bg-opacity-75 text-dark">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<i class="fa-solid fa-paint-roller pt-1" />
 					<div>Цвет фона</div>
 				</div>
 			</button>
 			<ul class="dropdown-menu">
-				<li>
-					<button class="dropdown-item" on:click={() => (bgColor = 'bg-white')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border bg-white" style="width: 1.2em; height:1.2em" />
-							<div>Белый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (bgColor = 'second-color')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border second-color" style="width: 1.2em; height:1.2em" />
-							<div>Светло-бежевый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (bgColor = 'third-color')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border third-color" style="width: 1.2em; height:1.2em" />
-							<div>Бежевый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (bgColor = 'fourth-color')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border fourth-color" style="width: 1.2em; height:1.2em" />
-							<div>Серый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (bgColor = 'bg-dark')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border bg-dark" style="width: 1.2em; height:1.2em" />
-							<div>Тёмный</div>
-						</div>
-					</button>
-				</li>
+				{#each colors as color}
+					{#if color.name != textColor.replace('text-', '')}
+						<li>
+							<button class="dropdown-item" on:click={() => (bgColor = 'bg-' + color.name)}>
+								<div class="d-flex align-items-center gap-2">
+									<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
+									<div>{color.description}</div>
+								</div>
+							</button>
+						</li>
+					{/if}
+				{/each}
 			</ul>
 			<button class="btn btn-secondary" data-bs-toggle="dropdown">
 				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
 			</button>
 		</div>
 		<div class="btn-group">
-			<button class="btn {bgColor} {textColor}">
+			<button class="btn bg-light bg-opacity-75 text-dark">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<i class="fa-solid fa-paintbrush pt-1" />
 					<div>Цвет шрифта</div>
 				</div>
 			</button>
 			<ul class="dropdown-menu">
-				<li>
-					<button class="dropdown-item" on:click={() => (textColor = 'text-white')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border bg-white" style="width: 1.2em; height:1.2em" />
-							<div>Белый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (textColor = 'text-second-color')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border second-color" style="width: 1.2em; height:1.2em" />
-							<div>Светло-бежевый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (textColor = 'text-third-color')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border third-color" style="width: 1.2em; height:1.2em" />
-							<div>Бежевый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (textColor = 'text-fourth-color')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border fourth-color" style="width: 1.2em; height:1.2em" />
-							<div>Серый</div>
-						</div>
-					</button>
-				</li>
-				<li>
-					<button class="dropdown-item" on:click={() => (textColor = 'text-dark')}>
-						<div class="d-flex align-items-center gap-2">
-							<div class="border bg-dark" style="width: 1.2em; height:1.2em" />
-							<div>Тёмный</div>
-						</div>
-					</button>
-				</li>
+				{#each colors as color}
+					{#if color.name != bgColor.replace('bg-', '')}
+						<li>
+							<button class="dropdown-item" on:click={() => (textColor = 'text-' + color.name)}>
+								<div class="d-flex align-items-center gap-2">
+									<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
+									<div>{color.description}</div>
+								</div>
+							</button>
+						</li>
+					{/if}
+				{/each}
 			</ul>
 			<button class="btn btn-secondary" data-bs-toggle="dropdown">
 				<i class="fa-solid fa-chevron-up" style="font-size: .9em;" />
 			</button>
 		</div>
 		<div class="btn-group">
-			<button class="btn {bgColor} {textColor}">
+			<button class="btn bg-light bg-opacity-75 text-dark">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-font" />
@@ -397,7 +348,7 @@
 			</button>
 		</div>
 		<div class="btn-group">
-			<button class="btn {bgColor} {textColor}">
+			<button class="btn bg-light bg-opacity-75 text-dark">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-text-height" />
@@ -414,7 +365,7 @@
 			>
 		</div>
 		<div class="btn-group">
-			<button class="btn {bgColor} {textColor}">
+			<button class="btn bg-light bg-opacity-75 text-dark">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-arrow-down-up-across-line" />
@@ -431,7 +382,7 @@
 			>
 		</div>
 		<div class="btn-group">
-			<button class="btn {bgColor} {textColor}">
+			<button class="btn bg-light bg-opacity-75 text-dark">
 				<div class="d-flex flex-column align-items-center justify-content-center">
 					<div class="d-flex align-items-center gap-1 pt-1">
 						<i class="fa-solid fa-arrows-up-to-line" />
@@ -458,35 +409,35 @@
 		--article-interval: 1;
 	}
 
-	.first-color {
+	.bg-1 {
 		background: #f0ece2;
 	}
 
-	.second-color {
+	.bg-2 {
 		background: #dfd3c3;
 	}
 
-	.third-color {
+	.bg-3 {
 		background: #c7b198;
 	}
 
-	.fourth-color {
+	.bg-4 {
 		background: #596e79;
 	}
 
-	.text-first-color {
+	.text-1 {
 		color: #f0ece2;
 	}
 
-	.text-second-color {
+	.text-2 {
 		color: #dfd3c3;
 	}
 
-	.text-third-color {
+	.text-3 {
 		color: #c7b198;
 	}
 
-	.text-fourth-color {
+	.text-4 {
 		color: #596e79;
 	}
 </style>
