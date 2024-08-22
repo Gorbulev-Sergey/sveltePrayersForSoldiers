@@ -15,7 +15,11 @@
 	];
 </script>
 
-<div class="sticky-top w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
+<div
+	class="sticky-top w-100 {bgColor != 'bg-dark' ? 'bg-dark' : 'bg-4'} text-light p-3 {isNavPanelShow
+		? ''
+		: 'collapse'}"
+>
 	<h6 class="mb-0">Молитвы о воинах</h6>
 </div>
 
@@ -224,7 +228,11 @@
 	</div>
 </div>
 
-<div class="sticky-bottom w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
+<div
+	class="sticky-bottom w-100 {bgColor != 'bg-dark'
+		? 'bg-dark'
+		: 'bg-4'} text-light p-3 {isNavPanelShow ? '' : 'collapse'}"
+>
 	<div class="d-flex flex-column gap-2 align-items-stretch">
 		<div class="btn-group">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
