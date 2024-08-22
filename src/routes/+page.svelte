@@ -221,10 +221,10 @@
 </div>
 
 <div class="sticky-bottom w-100 bg-dark text-light p-3 {isNavPanelShow ? '' : 'collapse'}">
-	<div class="d-flex align-items-center gap-2 mb-2">
+	<div class="d-flex align-items-center flex-nowrap gap-2 mb-2">
 		<div class="btn-group w-50">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column justify-content-center">
+				<div class="d-flex flex-column text-start">
 					<i class="fa-solid fa-paint-roller pt-1" />
 				</div>
 				<div class="text-start">Цвет фона</div>
@@ -249,7 +249,7 @@
 		</div>
 		<div class="btn-group w-50">
 			<button class="btn bg-light bg-opacity-75 text-dark w-100">
-				<div class="d-flex flex-column justify-content-center">
+				<div class="d-flex flex-column text-start">
 					<i class="fa-solid fa-paintbrush pt-1" />
 				</div>
 				<div class="text-start">Цвет шрифта</div>
