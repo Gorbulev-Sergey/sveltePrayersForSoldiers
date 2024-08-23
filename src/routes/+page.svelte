@@ -359,28 +359,6 @@
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Droid')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: 'sans-serif">
-									Droid
-								</div>
-							</button>
-						</li>
-						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Droid Serif')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: 'serif">
-									Droid Serif
-								</div>
-							</button>
-						</li>
-						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Droid Serif')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: 'Droid Sans">
-									Droid Sans Regular
-								</div>
-							</button>
-						</li>
-
-						<li>
 							<button class="dropdown-item" on:click={() => (fontFamily = 'Lora')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Lora">Lora</div>
 							</button>
@@ -464,12 +442,52 @@
 
 <style>
 	@font-face {
+		font-family: 'Cormorant_Infant';
+		src: local('Cormorant_Infant'), url(/fonts/Cormorant_Infant/CormorantInfant-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Inter';
+		src: local('Inter'), url(/fonts/Inter/static/Inter_24pt-Regular.ttf);
+	}
+	@font-face {
 		font-family: 'Lora';
 		src: local('Lora'), url(/fonts/Lora/static/Lora-Regular.ttf);
 	}
 	@font-face {
+		font-family: 'Manrope';
+		src: local('Manrope'), url(/fonts/Manrope/static/Manrope-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Montserrat';
+		src: local('Montserrat'), url(/fonts/Montserrat/static/Montserrat-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Open_Sans';
+		src: local('Open_Sans'), url(/fonts/Open_Sans/static/Open_Sans-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Oswald';
+		src: local('Oswald'), url(/fonts/Oswald/static/Oswald-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'PT_Sans';
+		src: local('PT_Sans'), url(/fonts/PT_Sans-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'PT_Serif';
+		src: local('PT_Serif'), url(/fonts/PT_Serif-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Raleway';
+		src: local('Raleway'), url(/fonts/static/Raleway-Regular.ttf);
+	}
+	@font-face {
 		font-family: 'Roboto';
-		src: local('Roboto'), url(/fonts/Roboto/Roboto-Regular.ttf);
+		src: local('Roboto'), url(/fonts/static/Roboto-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Rubik';
+		src: local('Rubik'), url(/fonts/static/Rubik-Regular.ttf);
 	}
 
 	:global(p) {
