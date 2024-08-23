@@ -359,42 +359,19 @@
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Arial')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: Arial">Arial</div>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Jost')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Jost'">Jost</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Cambria')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: Cambria">
-									Cambria
-								</div>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Lora')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Lora">Lora</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Georgia')}>
-								<div class="d-flex align-items-center gap-2" style="font-family:Georgia">
-									Georgia
-								</div>
-							</button>
-						</li>
-						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Segoe UI')}>
-								<div class="d-flex align-items-center gap-2" style="font-family:'Segoe UI'">
-									Segoe UI
-								</div>
-							</button>
-						</li>
-						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Times New Roman')}>
-								<div class="d-flex align-items-center gap-2" style="font-family:'Times New Roman'">
-									Times New Roman
-								</div>
-							</button>
-						</li>
-						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Verdana')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: Verdana">
-									Verdana
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Roboto')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'Roboto">
+									Roboto
 								</div>
 							</button>
 						</li>
@@ -469,6 +446,19 @@
 </div>
 
 <style>
+	@font-face {
+		font-family: 'Jost';
+		src: local('Jost'), url(/fonts/Jost/static/Jost-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Lora';
+		src: local('Lora'), url(/fonts/Lora/static/Lora-Regular.ttf);
+	}
+	@font-face {
+		font-family: 'Roboto';
+		src: local('Roboto'), url(/fonts/Roboto/Roboto-Regular.ttf);
+	}
+
 	:global(p) {
 		margin-bottom: var(--article-interval);
 	}
