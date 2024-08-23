@@ -5,7 +5,7 @@
 	let isTitlesShow = true;
 	let bgColor = 'bg-light';
 	let textColor = 'text-dark';
-	let fontFamily = 'Segoe UI';
+	let fontFamily = 'Raleway';
 	let fontSize = 1.2;
 	let lineHeight = 1.25;
 	let articleInterval = 0.75;
@@ -542,7 +542,7 @@
 	}
 	@font-face {
 		font-family: 'Rubik';
-		src: local('Rubik'), url(/fonts/Rubik/static/Rubik-Light.ttf);
+		src: local('Rubik'), url(/fonts/Rubik/static/Rubik-Regular.ttf);
 	}
 
 	:global(p) {
