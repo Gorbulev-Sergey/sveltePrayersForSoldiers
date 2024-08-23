@@ -2,14 +2,14 @@
 	import Title from '$lib/components/Title.svelte';
 
 	let isNavPanelShow = true;
-	let bgColor = 'bg-white';
+	let bgColor = 'bg-light';
 	let textColor = 'text-dark';
 	let fontFamily = 'Segoe UI';
 	let fontSize = 1.2;
 	let lineHeight = 1.25;
 	let articleInterval = 0.75;
 	let colors = [
-		{ name: 'white', description: 'Белый' },
+		{ name: 'light', description: 'Белый' },
 		{ name: '2', description: 'Светло-бежевый' },
 		{ name: '3', description: 'Бежевый' },
 		{ name: '4', description: 'Серый' },
@@ -248,7 +248,7 @@
 							on:click={() => {
 								bgColor = 'bg-' + color.name;
 								if (textColor.replace('text-', '') == bgColor.replace('bg-', '')) {
-									if (bgColor == 'bg-dark') textColor = 'text-white';
+									if (bgColor == 'bg-dark') textColor = 'text-light';
 									else textColor = 'text-dark';
 								}
 							}}

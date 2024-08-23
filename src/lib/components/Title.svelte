@@ -5,9 +5,16 @@
 </script>
 
 <div
-	class="sticky-top w-100 shadow shadow-sm {bgColor != 'bg-dark'
-		? 'bg-dark'
-		: 'bg-4'} text-light p-3 {isShow ? '' : 'collapse'}"
+	class="sticky-top w-100 shadow {bgColor != 'bg-dark' ? 'bg-dark' : 'bg-4'} text-light {isShow
+		? ''
+		: 'collapse'}"
 >
-	<b class="mb-0">{title}</b>
+	<div class="d-flex align-items-center justify-content-between px-3 py-2">
+		<b class="mb-0">{title}</b>
+		<div>
+			<button class="btn {bgColor != 'bg-dark' ? 'bg-dark' : 'bg-4'} text-light">
+				<i class="fa-solid fa-gear" />
+			</button>
+		</div>
+	</div>
 </div>
