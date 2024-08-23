@@ -1,66 +1,55 @@
-export class LocalStorage {
-    private _isNavPanelShow = true;
-    private _isTitlesShow = true;
-    private _bgColor = "bg-light";
-    private _textColor = "text-dark";
-    private _fontFamily = "Raleway";
-    private _fontSize = 1.2;
-    private _lineHeight = 1.25;
-    private _articleInterval = 0.75;
+export let isNavPanelShow = (v: Boolean | undefined = undefined) => {
+    if (v == undefined)
+        return localStorage.getItem('isNavPanelShow') === 'true';
+    else
+        localStorage.setItem('isNavPanelShow', JSON.stringify(v));
+}
 
-    public get isNavPanelShow() {
-        return this._isNavPanelShow
-    }
-    public set isNavPanelShow(v: Boolean) {
-        localStorage.setItem('isNavPanelShow', v.toString())
-    }
+export let isTitlesShow = (v: Boolean | undefined = undefined) => {
+    if (v == undefined)
+        return localStorage.getItem('isTitlesShow') === 'true';
+    else
+        localStorage.setItem('isTitlesShow', JSON.stringify(v));
+}
 
-    public get isTitlesShow() {
-        return this._isTitlesShow
-    }
-    public set isTitlesShow(v: Boolean) {
-        localStorage.setItem('isTitlesShow', v.toString())
-    }
+export let bgColor = (v: String | undefined = undefined) => {
+    if (v == undefined)
+        return JSON.stringify(localStorage.getItem('bgColor'));
+    else
+        localStorage.setItem('bgColor', JSON.stringify(v));
+}
 
-    public get bgColor() {
-        return this._bgColor
-    }
-    public set bgColor(v: string) {
-        localStorage.setItem('bgColor', v)
-    }
+export let textColor = (v: String | undefined = undefined) => {
+    if (v == undefined)
+        return JSON.stringify(localStorage.getItem('textColor'));
+    else
+        localStorage.setItem('textColor', JSON.stringify(v));
+}
 
-    public get textColor() {
-        return this._textColor
-    }
-    public set textColor(v: string) {
-        localStorage.setItem('textColor', v)
-    }
+export let fontFamily = (v: String | undefined = undefined) => {
+    if (v == undefined)
+        return JSON.stringify(localStorage.getItem('fontFamily'));
+    else
+        localStorage.setItem('fontFamily', JSON.stringify(v));
+}
 
-    public get fontFamily() {
-        return this._fontFamily
-    }
-    public set fontFamily(v: string) {
-        localStorage.setItem('fontFamily', v)
-    }
+export let fontSize = (v: Number | undefined = undefined) => {
+    if (v == undefined)
+        return Number(localStorage.getItem('fontSize'));
+    else
+        localStorage.setItem('fontSize', JSON.stringify(v));
+}
 
-    public get fontSize() {
-        return Number(this._fontSize)
-    }
-    public set fontSize(v: number) {
-        localStorage.setItem('fontSize', v.toString())
-    }
+export let lineHeight = (v: Number | undefined = undefined) => {
+    if (v == undefined)
+        return Number(localStorage.getItem('lineHeight'));
+    else
+        localStorage.setItem('lineHeight', JSON.stringify(v));
+}
 
-    public get lineHeight() {
-        return Number(this._lineHeight)
-    }
-    public set lineHeight(v: number) {
-        localStorage.setItem('lineHeight', v.toString())
-    }
-
-    public get articleInterval() {
-        return Number(this._articleInterval)
-    }
-    public set articleInterval(v: number) {
-        localStorage.setItem('articleInterval', v.toString())
-    }
+export let articleInterval = (v: Number | undefined = undefined) => {
+    if (v == undefined)
+        return Number(localStorage.getItem('articleInterval'));
+    else
+        localStorage.setItem('articleInterval', JSON.stringify(v));
 }
