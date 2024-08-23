@@ -529,7 +529,7 @@
 	}
 	@font-face {
 		font-family: 'Open_Sans';
-		src: local('Open_Sans'), url(/fonts/Open_Sans/static/Open_Sans-Regular.ttf);
+		src: local('Open_Sans'), url(/fonts/Open_Sans/static/OpenSans-Regular.ttf);
 	}
 	@font-face {
 		font-family: 'Oswald';
@@ -537,23 +537,23 @@
 	}
 	@font-face {
 		font-family: 'PT_Sans';
-		src: local('PT_Sans'), url(/fonts/PT_Sans-Regular.ttf);
+		src: local('PT_Sans'), url(/fonts/PT_Sans/PTSans-Regular.ttf);
 	}
 	@font-face {
 		font-family: 'PT_Serif';
-		src: local('PT_Serif'), url(/fonts/PT_Serif-Regular.ttf);
+		src: local('PT_Serif'), url(/fonts/PT_Serif/PTSerif-Regular.ttf);
 	}
 	@font-face {
 		font-family: 'Raleway';
-		src: local('Raleway'), url(/fonts/static/Raleway-Regular.ttf);
+		src: local('Raleway'), url(/fonts/Raleway/static/Raleway-Regular.ttf);
 	}
 	@font-face {
 		font-family: 'Roboto';
-		src: local('Roboto'), url(/fonts/static/Roboto-Regular.ttf);
+		src: local('Roboto'), url(/fonts/Roboto/Roboto-Regular.ttf);
 	}
 	@font-face {
 		font-family: 'Rubik';
-		src: local('Rubik'), url(/fonts/static/Rubik-Regular.ttf);
+		src: local('Rubik'), url(/fonts/Rubik/static/Rubik-Regular.ttf);
 	}
 
 	:global(p) {
