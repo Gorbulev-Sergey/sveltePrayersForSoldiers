@@ -1,25 +1,25 @@
 export class LocalStorage {
-    private _isNavPanelShow = localStorage.getItem('isNavPanelShow') || "true";
-    private _isTitlesShow = localStorage.getItem('isTitlesShow') || "true";
-    private _bgColor = localStorage.getItem('bgColor') || "bg-light";
-    private _textColor = localStorage.getItem('bgColor') || "text-dark";
-    private _fontFamily = localStorage.getItem('fontFamily') || "Raleway";
-    private _fontSize = localStorage.getItem('fontSize') || "1.2";
-    private _lineHeight = localStorage.getItem('lineHeight') || "1.25";
-    private _articleInterval = localStorage.getItem('articleInterval') || "0.75";
+    private _isNavPanelShow = true;
+    private _isTitlesShow = true;
+    private _bgColor = "bg-light";
+    private _textColor = "text-dark";
+    private _fontFamily = "Raleway";
+    private _fontSize = 1.2;
+    private _lineHeight = 1.25;
+    private _articleInterval = 0.75;
 
     public get isNavPanelShow() {
         return this._isNavPanelShow
     }
-    public set isNavPanelShow(v: string) {
-        localStorage.setItem('isNavPanelShow', v)
+    public set isNavPanelShow(v: Boolean) {
+        localStorage.setItem('isNavPanelShow', v.toString())
     }
 
     public get isTitlesShow() {
         return this._isTitlesShow
     }
-    public set isTitlesShow(v: string) {
-        localStorage.setItem('isTitlesShow', v)
+    public set isTitlesShow(v: Boolean) {
+        localStorage.setItem('isTitlesShow', v.toString())
     }
 
     public get bgColor() {
@@ -44,23 +44,23 @@ export class LocalStorage {
     }
 
     public get fontSize() {
-        return this._fontSize
+        return Number(this._fontSize)
     }
-    public set fontSize(v: string) {
-        localStorage.setItem('fontSize', v)
+    public set fontSize(v: number) {
+        localStorage.setItem('fontSize', v.toString())
     }
 
     public get lineHeight() {
-        return this._lineHeight
+        return Number(this._lineHeight)
     }
-    public set lineHeight(v: string) {
-        localStorage.setItem('lineHeight', v)
+    public set lineHeight(v: number) {
+        localStorage.setItem('lineHeight', v.toString())
     }
 
     public get articleInterval() {
-        return this._articleInterval
+        return Number(this._articleInterval)
     }
-    public set articleInterval(v: string) {
-        localStorage.setItem('articleInterval', v)
+    public set articleInterval(v: number) {
+        localStorage.setItem('articleInterval', v.toString())
     }
 }
