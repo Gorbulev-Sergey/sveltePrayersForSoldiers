@@ -2,6 +2,7 @@
 	import Title from '$lib/components/Title.svelte';
 
 	let isNavPanelShow = true;
+	let isTitlesShow = true;
 	let bgColor = 'bg-light';
 	let textColor = 'text-dark';
 	let fontFamily = 'Segoe UI';
@@ -17,7 +18,13 @@
 	];
 </script>
 
-<Title title="Молитвы о воинах" isShow={isNavPanelShow} {bgColor} />
+<Title
+	title="Молитвы о воинах"
+	isShow={isNavPanelShow}
+	{bgColor}
+	isTitlesButtonClicked={() => (isTitlesShow = true)}
+	isSettingsButtonClicked={() => (isTitlesShow = false)}
+/>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
@@ -227,209 +234,237 @@
 <div
 	class="sticky-bottom w-100 {bgColor != 'bg-dark'
 		? 'bg-dark'
-		: 'bg-4'} text-light p-3 {isNavPanelShow ? '' : 'collapse'}"
+		: 'bg-4'} text-light px-3 pt-2 pb-3 {isNavPanelShow ? '' : 'collapse'}"
 >
 	<div />
-	<div class="d-flex align-items-center justify-content-between mb-1">
-		<b class="mb-0">Оглавление</b>
-		<button class="btn {bgColor != 'bg-dark' ? 'bg-dark' : 'bg-4'} text-light">
-			<i class="fa-solid fa-gear" />
-		</button>
-	</div>
-
-	<div class="d-flex flex-column gap-0">
-		<a href="#t1"><h6>1. МОЛИТВА О МИРЕ И ЕДИНСТВЕ РУССКОЙ ЦЕРКВИ И НАРОДА</h6></a>
-		<a href="#t2"><h6>2. МОЛИТВА БОЖИЕЙ МАТЕРИ</h6></a>
-		<a href="#t3"><h6>3. МОЛИТВА ГОСПОДУ ИИСУСУ ХРИСТУ О ЗДРАВИИ ВОЕННОСЛУЖАЩЕГО</h6></a>
-		<a href="#t4"><h6>4. МОЛИТВА ЗА РОССИЮ И ВОИНСТВО ЕЕ</h6></a>
-		<a href="#t5"><h6>5. МОЛИТВА ЗА НАРОД ПРАВОСЛАВНЫЙ</h6></a>
-		<a href="#t6"><h6>6. ПОКАЯННАЯ МОЛИТВА, КОТОРУЮ ЧИТАЛИ В ЦЕРКВАХ В РОССИИ ВО ДНИ СМУТЫ</h6></a>
-		<a href="#t7"><h6>7. МОЛИТВА СВЯТОМУ АРХИСТРАТИГУ БОЖИЮ АРХАНГЕЛУ МИХАИЛУ</h6></a>
-		<a href="#t8"><h6>8. Святому мученику Иоанну Воину</h6></a>
-		<a href="#t9"><h6>9. Святому Георгию Победоносцу</h6></a>
-		<a href="#t10"
-			><h6>10. Святым благоверным князьям Российским, страстотерпцам Борису и Глебу</h6></a
-		>
-		<a href="#t11"><h6>11. Святому благоверному князю Александру Невском</h6></a>
-	</div>
-
-	<div hidden>
-		<div class="d-flex flex-column gap-2 align-items-stretch">
-			<div class="btn-group">
-				<button class="btn bg-light bg-opacity-75 text-dark w-100">
-					<div class="d-flex align-items-center gap-1 text-start">
-						<i class="fa-solid fa-paint-roller pt-1" />
-						<div class="badge {bgColor} {textColor} text-start">
-							{colors.find((c) => c.name == bgColor.replace('bg-', ''))?.description}
-						</div>
-					</div>
-					<div class=" text-start">Цвет фона</div>
-				</button>
-				<ul class="dropdown-menu">
-					{#each colors as color}
-						<li>
-							<button
-								class="dropdown-item"
-								on:click={() => {
-									bgColor = 'bg-' + color.name;
-									if (textColor.replace('text-', '') == bgColor.replace('bg-', '')) {
-										if (bgColor == 'bg-dark') textColor = 'text-light';
-										else textColor = 'text-dark';
-									}
-								}}
-							>
-								<div class="d-flex align-items-center gap-2">
-									<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
-									<div>{color.description}</div>
-								</div>
-							</button>
-						</li>
-					{/each}
-				</ul>
-				<button class="btn btn-secondary" data-bs-toggle="dropdown">
-					<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
-				</button>
+	{#if isTitlesShow}
+		<div class="d-flex align-items-center justify-content-between mb-1">
+			<div class="d-flex align-items-center gap-2 mt-1">
+				<i class="fa-regular fa-rectangle-list" />
+				<b class="mb-1">Оглавление</b>
 			</div>
-			<div class="btn-group">
-				<button class="btn bg-light bg-opacity-75 text-dark w-100">
-					<div class="d-flex align-items-center gap-1 text-start">
-						<i class="fa-solid fa-paintbrush pt-1" />
-						<div class="badge {textColor} text-start">
-							{colors.find((c) => c.name == textColor.replace('text-', ''))?.description}
+			<button
+				class="btn btn-sm bg-light text-dark position-absolute end-0 me-2"
+				on:click={() => (isNavPanelShow = false)}
+			>
+				<i class="fa-solid fa-xmark" />
+			</button>
+		</div>
+		<div class="d-flex flex-column gap-0">
+			<a href="#t1"><h6>1. МОЛИТВА О МИРЕ И ЕДИНСТВЕ РУССКОЙ ЦЕРКВИ И НАРОДА</h6></a>
+			<a href="#t2"><h6>2. МОЛИТВА БОЖИЕЙ МАТЕРИ</h6></a>
+			<a href="#t3"><h6>3. МОЛИТВА ГОСПОДУ ИИСУСУ ХРИСТУ О ЗДРАВИИ ВОЕННОСЛУЖАЩЕГО</h6></a>
+			<a href="#t4"><h6>4. МОЛИТВА ЗА РОССИЮ И ВОИНСТВО ЕЕ</h6></a>
+			<a href="#t5"><h6>5. МОЛИТВА ЗА НАРОД ПРАВОСЛАВНЫЙ</h6></a>
+			<a href="#t6"><h6>6. ПОКАЯННАЯ МОЛИТВА, КОТОРУЮ ЧИТАЛИ В ЦЕРКВАХ В РОССИИ ВО ДНИ СМУТЫ</h6></a
+			>
+			<a href="#t7"><h6>7. МОЛИТВА СВЯТОМУ АРХИСТРАТИГУ БОЖИЮ АРХАНГЕЛУ МИХАИЛУ</h6></a>
+			<a href="#t8"><h6>8. Святому мученику Иоанну Воину</h6></a>
+			<a href="#t9"><h6>9. Святому Георгию Победоносцу</h6></a>
+			<a href="#t10"
+				><h6>10. Святым благоверным князьям Российским, страстотерпцам Борису и Глебу</h6></a
+			>
+			<a href="#t11"><h6>11. Святому благоверному князю Александру Невском</h6></a>
+		</div>
+	{/if}
+	{#if !isTitlesShow}
+		<div class="d-flex align-items-center justify-content-between mb-1">
+			<div class="d-flex align-items-center gap-2 mt-1">
+				<i class="fa-regular fa-rectangle-list" />
+				<b class="mb-1">Настройки</b>
+			</div>
+			<button
+				class="btn btn-sm bg-light text-dark position-absolute end-0 me-2"
+				on:click={() => (isNavPanelShow = false)}
+			>
+				<i class="fa-solid fa-xmark" />
+			</button>
+		</div>
+		<div>
+			<div class="d-flex flex-column gap-2 align-items-stretch">
+				<div class="btn-group">
+					<button class="btn bg-light bg-opacity-75 text-dark w-100">
+						<div class="d-flex align-items-center gap-1 text-start">
+							<i class="fa-solid fa-paint-roller pt-1" />
+							<div class="badge {bgColor} {textColor} text-start">
+								{colors.find((c) => c.name == bgColor.replace('bg-', ''))?.description}
+							</div>
 						</div>
-					</div>
-					<div class="text-start">Цвет шрифта</div>
-				</button>
-				<ul class="dropdown-menu">
-					{#each colors as color}
-						{#if color.name != bgColor.replace('bg-', '')}
+						<div class=" text-start">Цвет фона</div>
+					</button>
+					<ul class="dropdown-menu">
+						{#each colors as color}
 							<li>
-								<button class="dropdown-item" on:click={() => (textColor = 'text-' + color.name)}>
+								<button
+									class="dropdown-item"
+									on:click={() => {
+										bgColor = 'bg-' + color.name;
+										if (textColor.replace('text-', '') == bgColor.replace('bg-', '')) {
+											if (bgColor == 'bg-dark') textColor = 'text-light';
+											else textColor = 'text-dark';
+										}
+									}}
+								>
 									<div class="d-flex align-items-center gap-2">
 										<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
 										<div>{color.description}</div>
 									</div>
 								</button>
 							</li>
-						{/if}
-					{/each}
-				</ul>
-				<button class="btn btn-secondary" data-bs-toggle="dropdown">
-					<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
-				</button>
-			</div>
-			<div class="btn-group">
-				<button class="btn bg-light bg-opacity-75 text-dark w-100">
-					<div class="d-flex flex-column justify-content-center">
-						<div class="d-flex align-items-center gap-1 pt-1">
-							<i class="fa-solid fa-font" />
-							<div class="badge bg-dark text-light" style="font-family: {fontFamily};">
-								{fontFamily}
+						{/each}
+					</ul>
+					<button class="btn btn-secondary" data-bs-toggle="dropdown">
+						<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
+					</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn bg-light bg-opacity-75 text-dark w-100">
+						<div class="d-flex align-items-center gap-1 text-start">
+							<i class="fa-solid fa-paintbrush pt-1" />
+							<div class="badge {textColor} text-start">
+								{colors.find((c) => c.name == textColor.replace('text-', ''))?.description}
 							</div>
 						</div>
-						<div class="text-start">Название шрифта</div>
-					</div>
-				</button>
-				<ul class="dropdown-menu">
-					<li>
-						<button class="dropdown-item" on:click={() => (fontFamily = 'Arial')}>
-							<div class="d-flex align-items-center gap-2" style="font-family: Arial">Arial</div>
-						</button>
-					</li>
-					<li>
-						<button class="dropdown-item" on:click={() => (fontFamily = 'Cambria')}>
-							<div class="d-flex align-items-center gap-2" style="font-family: Cambria">
-								Cambria
+						<div class="text-start">Цвет шрифта</div>
+					</button>
+					<ul class="dropdown-menu">
+						{#each colors as color}
+							{#if color.name != bgColor.replace('bg-', '')}
+								<li>
+									<button class="dropdown-item" on:click={() => (textColor = 'text-' + color.name)}>
+										<div class="d-flex align-items-center gap-2">
+											<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
+											<div>{color.description}</div>
+										</div>
+									</button>
+								</li>
+							{/if}
+						{/each}
+					</ul>
+					<button class="btn btn-secondary" data-bs-toggle="dropdown">
+						<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
+					</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn bg-light bg-opacity-75 text-dark w-100">
+						<div class="d-flex flex-column justify-content-center">
+							<div class="d-flex align-items-center gap-1 pt-1">
+								<i class="fa-solid fa-font" />
+								<div class="badge bg-dark text-light" style="font-family: {fontFamily};">
+									{fontFamily}
+								</div>
 							</div>
-						</button>
-					</li>
-					<li>
-						<button class="dropdown-item" on:click={() => (fontFamily = 'Georgia')}>
-							<div class="d-flex align-items-center gap-2" style="font-family:Georgia">Georgia</div>
-						</button>
-					</li>
-					<li>
-						<button class="dropdown-item" on:click={() => (fontFamily = 'Segoe UI')}>
-							<div class="d-flex align-items-center gap-2" style="font-family:'Segoe UI'">
-								Segoe UI
-							</div>
-						</button>
-					</li>
-					<li>
-						<button class="dropdown-item" on:click={() => (fontFamily = 'Times New Roman')}>
-							<div class="d-flex align-items-center gap-2" style="font-family:'Times New Roman'">
-								Times New Roman
-							</div>
-						</button>
-					</li>
-					<li>
-						<button class="dropdown-item" on:click={() => (fontFamily = 'Verdana')}>
-							<div class="d-flex align-items-center gap-2" style="font-family: Verdana">
-								Verdana
-							</div>
-						</button>
-					</li>
-				</ul>
-				<button class="btn btn-secondary" data-bs-toggle="dropdown">
-					<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
-				</button>
-			</div>
-			<div class="btn-group">
-				<button class="btn bg-light bg-opacity-75 text-dark w-100">
-					<div class="d-flex flex-column justify-content-center">
-						<div class="d-flex align-items-center gap-1 pt-1">
-							<i class="fa-solid fa-text-height" />
-							<div class="badge bg-dark text-light">{Math.round(fontSize * 100) / 100}</div>
+							<div class="text-start">Название шрифта</div>
 						</div>
-						<div class="text-start">Размер шрифта</div>
-					</div>
-				</button>
-				<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
-					><i class="fa-solid fa-plus m-2" /></button
-				>
-				<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize -= 0.05)}
-					><i class="fa-solid fa-minus m-2" /></button
-				>
-			</div>
-			<div class="btn-group">
-				<button class="btn bg-light bg-opacity-75 text-dark w-100">
-					<div class="d-flex flex-column justify-content-center">
-						<div class="d-flex align-items-center gap-1 pt-1">
-							<i class="fa-solid fa-arrow-down-up-across-line" />
-							<div class="badge bg-dark text-light">{Math.round(lineHeight * 100) / 100}</div>
+					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Arial')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: Arial">Arial</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Cambria')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: Cambria">
+									Cambria
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Georgia')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:Georgia">
+									Georgia
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Segoe UI')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'Segoe UI'">
+									Segoe UI
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Times New Roman')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'Times New Roman'">
+									Times New Roman
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Verdana')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: Verdana">
+									Verdana
+								</div>
+							</button>
+						</li>
+					</ul>
+					<button class="btn btn-secondary" data-bs-toggle="dropdown">
+						<i class="fa-solid fa-chevron-up m-2" style="font-size: .9em;" />
+					</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn bg-light bg-opacity-75 text-dark w-100">
+						<div class="d-flex flex-column justify-content-center">
+							<div class="d-flex align-items-center gap-1 pt-1">
+								<i class="fa-solid fa-text-height" />
+								<div class="badge bg-dark text-light">{Math.round(fontSize * 100) / 100}</div>
+							</div>
+							<div class="text-start">Размер шрифта</div>
 						</div>
-						<div class="text-start">Интервал строк</div>
-					</div>
-				</button>
-				<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight += 0.05)}
-					><i class="fa-solid fa-plus m-2" /></button
-				>
-				<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight -= 0.05)}
-					><i class="fa-solid fa-minus m-2" /></button
-				>
-			</div>
-			<div class="btn-group">
-				<button class="btn bg-light bg-opacity-75 text-dark w-100">
-					<div class="d-flex flex-column justify-content-center">
-						<div class="d-flex align-items-center gap-1 pt-1">
-							<i class="fa-solid fa-arrows-up-to-line" />
-							<div class="badge bg-dark text-light">{Math.round(articleInterval * 100) / 100}</div>
+					</button>
+					<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize += 0.05)}
+						><i class="fa-solid fa-plus m-2" /></button
+					>
+					<button class="btn btn-secondary" on:click|stopPropagation={() => (fontSize -= 0.05)}
+						><i class="fa-solid fa-minus m-2" /></button
+					>
+				</div>
+				<div class="btn-group">
+					<button class="btn bg-light bg-opacity-75 text-dark w-100">
+						<div class="d-flex flex-column justify-content-center">
+							<div class="d-flex align-items-center gap-1 pt-1">
+								<i class="fa-solid fa-arrow-down-up-across-line" />
+								<div class="badge bg-dark text-light">{Math.round(lineHeight * 100) / 100}</div>
+							</div>
+							<div class="text-start">Интервал строк</div>
 						</div>
-						<div class="text-start">Интервал абзацев</div>
-					</div>
-				</button>
-				<button class="btn btn-secondary" on:click|stopPropagation={() => (articleInterval += 0.05)}
-					><i class="fa-solid fa-plus m-2" /></button
-				>
-				<button class="btn btn-secondary" on:click|stopPropagation={() => (articleInterval -= 0.05)}
-					><i class="fa-solid fa-minus m-2" /></button
-				>
+					</button>
+					<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight += 0.05)}
+						><i class="fa-solid fa-plus m-2" /></button
+					>
+					<button class="btn btn-secondary" on:click|stopPropagation={() => (lineHeight -= 0.05)}
+						><i class="fa-solid fa-minus m-2" /></button
+					>
+				</div>
+				<div class="btn-group">
+					<button class="btn bg-light bg-opacity-75 text-dark w-100">
+						<div class="d-flex flex-column justify-content-center">
+							<div class="d-flex align-items-center gap-1 pt-1">
+								<i class="fa-solid fa-arrows-up-to-line" />
+								<div class="badge bg-dark text-light">
+									{Math.round(articleInterval * 100) / 100}
+								</div>
+							</div>
+							<div class="text-start">Интервал абзацев</div>
+						</div>
+					</button>
+					<button
+						class="btn btn-secondary"
+						on:click|stopPropagation={() => (articleInterval += 0.05)}
+						><i class="fa-solid fa-plus m-2" /></button
+					>
+					<button
+						class="btn btn-secondary"
+						on:click|stopPropagation={() => (articleInterval -= 0.05)}
+						><i class="fa-solid fa-minus m-2" /></button
+					>
+				</div>
 			</div>
 		</div>
-
-		<div class="badge bg-primary bg-opacity-10 mt-2 text-wrap">
-			Чтобы скрыть настройки нажмите на экран с текстом молитв.
-		</div>
+	{/if}
+	<div class="badge bg-primary bg-opacity-10 mt-2 text-wrap">
+		Чтобы скрыть оглавление/настройки нажмите на экран с текстом молитв.
 	</div>
 </div>
 
