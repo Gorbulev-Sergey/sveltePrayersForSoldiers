@@ -359,8 +359,69 @@
 					</button>
 					<ul class="dropdown-menu">
 						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Cormorant_Infant')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Cormorant_Infant">
+									Cormorant Infant
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Inter')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Inter">Inter</div>
+							</button>
+						</li>
+						<li>
 							<button class="dropdown-item" on:click={() => (fontFamily = 'Lora')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Lora">Lora</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Manrope')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Manrope">
+									Manrope
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Montserrat')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Montserrat">
+									Montserrat
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Open_Sans')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Open_Sans">
+									Open Sans
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Oswald')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'Oswald">
+									Oswald
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'PT_Sans')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'PT_Sans">
+									PT Sans
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'PT_Serif')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'PT_Serif">
+									PT Serif
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Raleway')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'Raleway">
+									Raleway
+								</div>
 							</button>
 						</li>
 						<li>
@@ -368,6 +429,11 @@
 								<div class="d-flex align-items-center gap-2" style="font-family:'Roboto">
 									Roboto
 								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Rubik')}>
+								<div class="d-flex align-items-center gap-2" style="font-family:'Rubik">Rubik</div>
 							</button>
 						</li>
 					</ul>
