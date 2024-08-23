@@ -20,17 +20,6 @@
 		{ name: '4', description: 'Серый' },
 		{ name: 'dark', description: 'Тёмный' }
 	];
-
-	function isNavPanelShow() {
-		localStorage.getItem('isNavPanelShow') ?? localStorage.setItem('isNavPanelShow', 'true');
-		return localStorage.getItem('isNavPanelShow');
-	}
-	function isNavPanelShow(v: Boolean = true) {
-		localStorage.getItem('isNavPanelShow') ?? localStorage.setItem('isNavPanelShow', 'true');
-		if (v) {
-			localStorage.setItem('isNavPanelShow', v.toString());
-		} else localStorage.getItem('isNavPanelShow');
-	}
 </script>
 
 <Title
