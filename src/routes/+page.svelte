@@ -238,10 +238,10 @@
 >
 	<div />
 	{#if isTitlesShow}
-		<div class="d-flex align-items-center justify-content-between mb-1">
+		<div class="d-flex align-items-center justify-content-between mb-2">
 			<div class="d-flex align-items-center gap-2 mt-1">
 				<i class="fa-regular fa-rectangle-list" />
-				<b class="mb-1">Оглавление</b>
+				<b>Оглавление</b>
 			</div>
 			<button
 				class="btn btn-sm bg-light text-dark position-absolute end-0 me-2"
@@ -268,10 +268,10 @@
 		</div>
 	{/if}
 	{#if !isTitlesShow}
-		<div class="d-flex align-items-center justify-content-between mb-1">
+		<div class="d-flex align-items-center justify-content-between mb-2">
 			<div class="d-flex align-items-center gap-2 mt-1">
-				<i class="fa-regular fa-rectangle-list" />
-				<b class="mb-1">Настройки</b>
+				<i class="fa-solid fa-gear" />
+				<b>Настройки</b>
 			</div>
 			<button
 				class="btn btn-sm bg-light text-dark position-absolute end-0 me-2"
@@ -463,7 +463,7 @@
 			</div>
 		</div>
 	{/if}
-	<div class="badge bg-primary bg-opacity-10 mt-2 text-wrap">
+	<div class="badge bg-primary bg-opacity-10 mt-2 text-wrap" hidden>
 		Чтобы скрыть оглавление/настройки нажмите на экран с текстом молитв.
 	</div>
 </div>
