@@ -9,10 +9,10 @@
 		? ''
 		: 'collapse'}"
 >
-	<div class="d-flex align-items-center justify-content-between px-3 py-2">
-		<b class="mb-0">{title}</b>
+	<div class="d-flex align-items-center justify-content-between ps-3 py-2 pe-1">
+		<b class="mb-0" style="font-size: 1.1em;">{title}</b>
 		<div>
-			<button class="btn {bgColor != 'bg-dark' ? 'bg-dark' : 'bg-4'} text-light">
+			<button class="btn {bgColor != 'bg-dark' ? 'bg-dark' : 'bg-4'} text-light border-0">
 				<i class="fa-solid fa-gear" />
 			</button>
 		</div>
