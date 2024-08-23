@@ -24,17 +24,17 @@
 
 <Title
 	title="Молитвы о воинах"
-	isShow={LocalStorage.isNavPanelShow}
-	bgColor={LocalStorage.bgColor}
-	isTitlesButtonClicked={() => (LocalStorage.isTitlesShow = true)}
-	isSettingsButtonClicked={() => (LocalStorage.isTitlesShow = false)}
+	isShow={$isNavPanelShow}
+	bgColor={$bgColor}
+	isTitlesButtonClicked={() => ($isTitlesShow = true)}
+	isSettingsButtonClicked={() => ($isTitlesShow = false)}
 />
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
-	class="{LocalStorage.bgColor} {LocalStorage.textColor} pb-1"
-	style="font-size: {LocalStorage.fontSize}em; padding: 0 .7em; font-family: {LocalStorage.fontFamily}; line-height:{LocalStorage.lineHeight}em; --article-interval:{LocalStorage.articleInterval}em"
-	on:click={() => (LocalStorage.isNavPanelShow = !LocalStorage.isNavPanelShow)}
+	class="{$bgColor} {$textColor} pb-1"
+	style="font-size: {$fontSize}em; padding: 0 .7em; font-family: {$fontFamily}; line-height:{$lineHeight}em; --article-interval:{$articleInterval}em"
+	on:click={() => ($isNavPanelShow = !$isNavPanelShow)}
 >
 	<div id="t1">
 		<h5>МОЛИТВА О МИРЕ И ЕДИНСТВЕ РУССКОЙ ЦЕРКВИ И НАРОДА</h5>
@@ -236,12 +236,12 @@
 </div>
 
 <div
-	class="sticky-bottom w-100 {LocalStorage.bgColor != 'bg-dark'
+	class="sticky-bottom w-100 {$bgColor != 'bg-dark'
 		? 'bg-dark'
-		: 'bg-4'} text-light px-3 pt-2 pb-3 {isNavPanelShow() ? '' : 'collapse'}"
+		: 'bg-4'} text-light px-3 pt-2 pb-3 {$isNavPanelShow ? '' : 'collapse'}"
 >
 	<div />
-	{#if LocalStorage.isTitlesShow}
+	{#if $isTitlesShow}
 		<div class="d-flex align-items-center justify-content-between mb-2">
 			<div class="d-flex align-items-center gap-2 mt-1">
 				<i class="fa-regular fa-rectangle-list" />
@@ -249,7 +249,7 @@
 			</div>
 			<button
 				class="btn btn-sm bg-light text-dark position-absolute end-0 me-2"
-				on:click={() => (LocalStorage.isNavPanelShow = false)}
+				on:click={() => ($isNavPanelShow = false)}
 			>
 				<i class="fa-solid fa-xmark" />
 			</button>
@@ -271,7 +271,7 @@
 			<a href="#t11"><h6>11. Святому благоверному князю Александру Невском</h6></a>
 		</div>
 	{/if}
-	{#if !LocalStorage.isTitlesShow}
+	{#if !$isTitlesShow}
 		<div class="d-flex align-items-center justify-content-between mb-2">
 			<div class="d-flex align-items-center gap-2 mt-1">
 				<i class="fa-solid fa-gear" />
@@ -279,7 +279,7 @@
 			</div>
 			<button
 				class="btn btn-sm bg-light text-dark position-absolute end-0 me-2"
-				on:click={() => (LocalStorage.isNavPanelShow = false)}
+				on:click={() => ($isNavPanelShow = false)}
 			>
 				<i class="fa-solid fa-xmark" />
 			</button>
@@ -290,8 +290,8 @@
 					<button class="btn bg-light bg-opacity-75 text-dark w-100">
 						<div class="d-flex align-items-center gap-1 text-start">
 							<i class="fa-solid fa-paint-roller pt-1" />
-							<div class="badge {LocalStorage.bgColor} {LocalStorage.textColor} text-start">
-								{colors.find((c) => c.name == LocalStorage.bgColor.replace('bg-', ''))?.description}
+							<div class="badge {$bgColor} {$textColor} text-start">
+								{colors.find((c) => c.name == $bgColor.replace('bg-', ''))?.description}
 							</div>
 						</div>
 						<div class=" text-start">Цвет фона</div>
@@ -302,13 +302,10 @@
 								<button
 									class="dropdown-item"
 									on:click={() => {
-										LocalStorage.bgColor = 'bg-' + color.name;
-										if (
-											LocalStorage.textColor.replace('text-', '') ==
-											LocalStorage.bgColor.replace('bg-', '')
-										) {
-											if (LocalStorage.bgColor == 'bg-dark') LocalStorage.textColor = 'text-light';
-											else LocalStorage.textColor = 'text-dark';
+										$bgColor = 'bg-' + color.name;
+										if ($textColor.replace('text-', '') == $bgColor.replace('bg-', '')) {
+											if ($bgColor == 'bg-dark') $textColor = 'text-light';
+											else $textColor = 'text-dark';
 										}
 									}}
 								>
@@ -328,20 +325,19 @@
 					<button class="btn bg-light bg-opacity-75 text-dark w-100">
 						<div class="d-flex align-items-center gap-1 text-start">
 							<i class="fa-solid fa-paintbrush pt-1" />
-							<div class="badge {LocalStorage.textColor} text-start">
-								{colors.find((c) => c.name == LocalStorage.textColor.replace('text-', ''))
-									?.description}
+							<div class="badge {$textColor} text-start">
+								{colors.find((c) => c.name == $textColor.replace('text-', ''))?.description}
 							</div>
 						</div>
 						<div class="text-start">Цвет шрифта</div>
 					</button>
 					<ul class="dropdown-menu">
 						{#each colors as color}
-							{#if color.name != LocalStorage.bgColor.replace('bg-', '')}
+							{#if color.name != $bgColor.replace('bg-', '')}
 								<li>
 									<button
 										class="dropdown-item"
-										on:click={() => (LocalStorage.textColor = 'text-' + color.name)}
+										on:click={() => ($textColor = 'text-' + color.name)}
 									>
 										<div class="d-flex align-items-center gap-2">
 											<div class="border bg-{color.name}" style="width: 1.2em; height:1.2em" />
@@ -361,11 +357,8 @@
 						<div class="d-flex flex-column justify-content-center">
 							<div class="d-flex align-items-center gap-1 pt-1">
 								<i class="fa-solid fa-font" />
-								<div
-									class="badge bg-dark text-light"
-									style="font-family: {LocalStorage.fontFamily};"
-								>
-									{LocalStorage.fontFamily}
+								<div class="badge bg-dark text-light" style="font-family: {$fontFamily};">
+									{$fontFamily}
 								</div>
 							</div>
 							<div class="text-start">Название шрифта</div>
@@ -373,79 +366,73 @@
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'Inter')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Inter')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Inter">Inter</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'Lora')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Lora')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Lora">Lora</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'Manrope')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Manrope')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Manrope">
 									Manrope
 								</div>
 							</button>
 						</li>
 						<li>
-							<button
-								class="dropdown-item"
-								on:click={() => (LocalStorage.fontFamily = 'Montserrat')}
-							>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Montserrat')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Montserrat">
 									Montserrat
 								</div>
 							</button>
 						</li>
 						<li>
-							<button
-								class="dropdown-item"
-								on:click={() => (LocalStorage.fontFamily = 'Open_Sans')}
-							>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Open_Sans')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Open_Sans">
 									Open Sans
 								</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'Oswald')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Oswald')}>
 								<div class="d-flex align-items-center gap-2" style="font-family:'Oswald">
 									Oswald
 								</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'PT_Sans')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'PT_Sans')}>
 								<div class="d-flex align-items-center gap-2" style="font-family:'PT_Sans">
 									PT Sans
 								</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'PT_Serif')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'PT_Serif')}>
 								<div class="d-flex align-items-center gap-2" style="font-family:'PT_Serif">
 									PT Serif
 								</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'Raleway')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Raleway')}>
 								<div class="d-flex align-items-center gap-2" style="font-family:'Raleway">
 									Raleway
 								</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'Roboto')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Roboto')}>
 								<div class="d-flex align-items-center gap-2" style="font-family:'Roboto">
 									Roboto
 								</div>
 							</button>
 						</li>
 						<li>
-							<button class="dropdown-item" on:click={() => (LocalStorage.fontFamily = 'Rubik')}>
+							<button class="dropdown-item" on:click={() => ($fontFamily = 'Rubik')}>
 								<div class="d-flex align-items-center gap-2" style="font-family:'Rubik">Rubik</div>
 							</button>
 						</li>
@@ -464,14 +451,10 @@
 							<div class="text-start">Размер шрифта</div>
 						</div>
 					</button>
-					<button
-						class="btn btn-secondary"
-						on:click|stopPropagation={() => (LocalStorage.fontSize += 0.05)}
+					<button class="btn btn-secondary" on:click|stopPropagation={() => ($fontSize += 0.05)}
 						><i class="fa-solid fa-plus m-2" /></button
 					>
-					<button
-						class="btn btn-secondary"
-						on:click|stopPropagation={() => (LocalStorage.fontSize -= 0.05)}
+					<button class="btn btn-secondary" on:click|stopPropagation={() => ($fontSize -= 0.05)}
 						><i class="fa-solid fa-minus m-2" /></button
 					>
 				</div>
@@ -485,14 +468,10 @@
 							<div class="text-start">Интервал строк</div>
 						</div>
 					</button>
-					<button
-						class="btn btn-secondary"
-						on:click|stopPropagation={() => (LocalStorage.lineHeight += 0.05)}
+					<button class="btn btn-secondary" on:click|stopPropagation={() => ($lineHeight += 0.05)}
 						><i class="fa-solid fa-plus m-2" /></button
 					>
-					<button
-						class="btn btn-secondary"
-						on:click|stopPropagation={() => (LocalStorage.lineHeight -= 0.05)}
+					<button class="btn btn-secondary" on:click|stopPropagation={() => ($lineHeight -= 0.05)}
 						><i class="fa-solid fa-minus m-2" /></button
 					>
 				</div>
@@ -502,7 +481,7 @@
 							<div class="d-flex align-items-center gap-1 pt-1">
 								<i class="fa-solid fa-arrows-up-to-line" />
 								<div class="badge bg-dark text-light">
-									{Math.round(LocalStorage.articleInterval * 100) / 100}
+									{Math.round($articleInterval * 100) / 100}
 								</div>
 							</div>
 							<div class="text-start">Интервал абзацев</div>
@@ -510,12 +489,12 @@
 					</button>
 					<button
 						class="btn btn-secondary"
-						on:click|stopPropagation={() => (LocalStorage.articleInterval += 0.05)}
+						on:click|stopPropagation={() => ($articleInterval += 0.05)}
 						><i class="fa-solid fa-plus m-2" /></button
 					>
 					<button
 						class="btn btn-secondary"
-						on:click|stopPropagation={() => (LocalStorage.articleInterval -= 0.05)}
+						on:click|stopPropagation={() => ($articleInterval -= 0.05)}
 						><i class="fa-solid fa-minus m-2" /></button
 					>
 				</div>
