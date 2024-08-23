@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Title from '$lib/components/Title.svelte';
+
 	let isNavPanelShow = true;
 	let bgColor = 'bg-white';
 	let textColor = 'text-dark';
@@ -15,13 +17,7 @@
 	];
 </script>
 
-<div
-	class="sticky-top w-100 shadow shadow-sm {bgColor != 'bg-dark'
-		? 'bg-dark'
-		: 'bg-4'} text-light p-3 {isNavPanelShow ? '' : 'collapse'}"
->
-	<b class="mb-0">Молитвы о воинах</b>
-</div>
+<Title title="Молитвы о воинах" isShow={isNavPanelShow} {bgColor} />
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
@@ -426,7 +422,7 @@
 		background: #c7b198;
 	}
 
-	.bg-4 {
+	:global(.bg-4) {
 		background: #596e79;
 	}
 
