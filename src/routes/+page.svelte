@@ -359,13 +359,6 @@
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Cormorant_Infant')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: 'Cormorant_Infant">
-									Cormorant Infant
-								</div>
-							</button>
-						</li>
-						<li>
 							<button class="dropdown-item" on:click={() => (fontFamily = 'Inter')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Inter">Inter</div>
 							</button>
@@ -508,10 +501,6 @@
 
 <style>
 	@font-face {
-		font-family: 'Cormorant_Infant';
-		src: local('Cormorant_Infant'), url(/fonts/Cormorant_Infant/CormorantInfant-Regular.ttf);
-	}
-	@font-face {
 		font-family: 'Inter';
 		src: local('Inter'), url(/fonts/Inter/static/Inter_24pt-Regular.ttf);
 	}
@@ -533,7 +522,7 @@
 	}
 	@font-face {
 		font-family: 'Oswald';
-		src: local('Oswald'), url(/fonts/Oswald/static/Oswald-Regular.ttf);
+		src: local('Oswald'), url(/fonts/Oswald/static/Oswald-Light.ttf);
 	}
 	@font-face {
 		font-family: 'PT_Sans';
@@ -553,7 +542,7 @@
 	}
 	@font-face {
 		font-family: 'Rubik';
-		src: local('Rubik'), url(/fonts/Rubik/static/Rubik-Regular.ttf);
+		src: local('Rubik'), url(/fonts/Rubik/static/Rubik-Light.ttf);
 	}
 
 	:global(p) {
