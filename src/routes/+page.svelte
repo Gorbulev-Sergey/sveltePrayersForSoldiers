@@ -444,7 +444,9 @@
 						<div class="d-flex flex-column justify-content-center">
 							<div class="d-flex align-items-center gap-1 pt-1">
 								<i class="fa-solid fa-text-height" />
-								<div class="badge bg-dark text-light">{Math.round($fontSize * 100) / 100}</div>
+								<div class="badge bg-dark text-light">
+									{Math.round($fontSize * 100) / 100}
+								</div>
 							</div>
 							<div class="text-start">Размер шрифта</div>
 						</div>
@@ -461,7 +463,9 @@
 						<div class="d-flex flex-column justify-content-center">
 							<div class="d-flex align-items-center gap-1 pt-1">
 								<i class="fa-solid fa-arrow-down-up-across-line" />
-								<div class="badge bg-dark text-light">{Math.round($lineHeight * 100) / 100}</div>
+								<div class="badge bg-dark text-light">
+									{Math.round($lineHeight * 100) / 100}
+								</div>
 							</div>
 							<div class="text-start">Интервал строк</div>
 						</div>
