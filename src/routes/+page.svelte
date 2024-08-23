@@ -359,10 +359,27 @@
 					</button>
 					<ul class="dropdown-menu">
 						<li>
-							<button class="dropdown-item" on:click={() => (fontFamily = 'Jost')}>
-								<div class="d-flex align-items-center gap-2" style="font-family: 'Jost'">Jost</div>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Droid')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'sans-serif">
+									Droid
+								</div>
 							</button>
 						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Droid Serif')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'serif">
+									Droid Serif
+								</div>
+							</button>
+						</li>
+						<li>
+							<button class="dropdown-item" on:click={() => (fontFamily = 'Droid Serif')}>
+								<div class="d-flex align-items-center gap-2" style="font-family: 'Droid Sans">
+									Droid Sans Regular
+								</div>
+							</button>
+						</li>
+
 						<li>
 							<button class="dropdown-item" on:click={() => (fontFamily = 'Lora')}>
 								<div class="d-flex align-items-center gap-2" style="font-family: 'Lora">Lora</div>
@@ -446,10 +463,6 @@
 </div>
 
 <style>
-	@font-face {
-		font-family: 'Jost';
-		src: local('Jost'), url(/fonts/Jost/static/Jost-Regular.ttf);
-	}
 	@font-face {
 		font-family: 'Lora';
 		src: local('Lora'), url(/fonts/Lora/static/Lora-Regular.ttf);
